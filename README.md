@@ -5,13 +5,18 @@ Experimental project with multiple frontend frameworks or languages.
 ## Demo
 [https://andys8.github.io/hello-stack](https://andys8.github.io/hello-stack)
 
-## Frameworks
+## Stack
 
 - [React](https://facebook.github.io/react)
 - [Elm](http://elm-lang.org)
 - [ReasonML](https://reasonml.github.io)
+- [PureScript](http://www.purescript.org)
 
 ## Instructions
+
+### Prerequisites
+- NPM
+- Bower
 
 1. Clone repository
 2. `npm i`

@@ -1,7 +1,6 @@
 const autoprefixer = require('autoprefixer');
 const path = require('path');
 const eslintFormatter = require('react-dev-utils/eslintFormatter');
-const ModuleScopePlugin = require('react-dev-utils/ModuleScopePlugin');
 
 const paths = require('./paths');
 
@@ -15,14 +14,13 @@ module.exports = {
       // It is guaranteed to exist because we tweak it in `env.js`
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
     ),
-    extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx', '.elm', '.re', '.ml'],
+    extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx', '.elm', '.re', '.ml', '.purs'],
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
       // This often causes confusion because we only process files within src/ with babel.
       // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
       // please link the files into your node_modules/ and let module-resolution kick in.
       // Make sure your source files are compiled, as they will not be processed in any way.
-      new ModuleScopePlugin(paths.appSrc, [paths.appPackageJson]),
     ],
   }, module: {
     strictExportPresence: true,
@@ -62,6 +60,23 @@ module.exports = {
         use: [
           {
             loader: 'bs-loader'
+          }
+        ]
+      },
+      {
+        test: /\.purs$/,
+        use: [
+          {
+            loader: 'purs-loader',
+            options: {
+              src: [
+                'bower_components/purescript-*/src/**/*.purs',
+                'src/**/*.purs'
+              ],
+              bundle: false,
+              psc: '',
+              pscIde: false,
+            }
           }
         ]
       },
@@ -123,7 +138,7 @@ module.exports = {
             // it's runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.js$/, /\.html$/, /\.json$/, /\.elm$/, /\.re$/],
+            exclude: [/\.js$/, /\.html$/, /\.json$/, /\.elm$/, /\.re$/, /\.purs$/],
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
             },
