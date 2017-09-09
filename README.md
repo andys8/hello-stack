@@ -1,4 +1,5 @@
 # hello-stack
+[![Build Status](https://travis-ci.org/andys8/hello-stack.svg?branch=master)](https://travis-ci.org/andys8/hello-stack)
 
 Experimental project with multiple frontend frameworks or languages.
 
@@ -13,10 +14,6 @@ Experimental project with multiple frontend frameworks or languages.
 - [PureScript](http://www.purescript.org)
 
 ## Instructions
-
-### Prerequisites
-- NPM
-- Bower
 
 1. Clone repository
 2. `npm i`
