@@ -33,6 +33,7 @@
     "react": "^15.6.1",
     "react-dev-utils": "^4.0.1",
     "react-dom": "^15.6.1",
+    "serve": "^6.0.6",
     "style-loader": "0.18.2",
     "url-loader": "0.5.9",
     "webpack": "3.5.1",
@@ -45,7 +46,9 @@
     "build": "node scripts/build.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "clean": "rm -rf build node_modules"
+    "clean": "rm -rf build tmp node_modules",
+    "preserve": "rm -rf tmp && mkdir tmp && mkdir tmp/hello-stack && cp -r build/* tmp/hello-stack",
+    "serve": "serve -s tmp/"
   },
   "babel": {
     "presets": [
