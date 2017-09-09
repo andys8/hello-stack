@@ -6,11 +6,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 // Apps
-import App from './react/App';
+import ReactApp from './react/App';
 import Elm from './elm/App';
+import './reasonml/init';
 
 // React init
-ReactDOM.render(<App />, document.getElementById('app__react'));
+ReactDOM.render(<ReactApp />, document.getElementById('app__react'));
 
 // Elm init
 Elm.App.embed(document.getElementById('app__elm'));

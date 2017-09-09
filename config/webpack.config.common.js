@@ -15,7 +15,7 @@ module.exports = {
       // It is guaranteed to exist because we tweak it in `env.js`
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
     ),
-    extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx', '.elm'],
+    extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx', '.elm', '.re', '.ml'],
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
       // This often causes confusion because we only process files within src/ with babel.
@@ -56,6 +56,14 @@ module.exports = {
           loader: 'elm-webpack-loader',
           options: {}
         }
+      },
+      {
+        test: /\.(re|ml)$/,
+        use: [
+          {
+            loader: 'bs-loader'
+          }
+        ]
       },
       {
         // "oneOf" will traverse all following loaders until one will
@@ -115,7 +123,7 @@ module.exports = {
             // it's runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.js$/, /\.html$/, /\.json$/],
+            exclude: [/\.js$/, /\.html$/, /\.json$/, /\.elm$/, /\.re$/],
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
             },
