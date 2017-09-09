@@ -9,6 +9,7 @@ import './index.css';
 import ReactApp from './react/App';
 import Elm from './elm/App';
 import './reasonml/init';
+import './purescript/Init.purs';
 
 // React init
 ReactDOM.render(<ReactApp />, document.getElementById('app__react'));

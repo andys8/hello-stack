@@ -1,0 +1,10 @@
+{
+  "name": "hello-stack",
+  "private": true,
+  "dependencies": {
+    "purescript-console": "3.0.0",
+    "purescript-eff": "3.1.0",
+    "purescript-react": "4.3.0",
+    "purescript-react-dom": "4.0.0"
+  }
+}
