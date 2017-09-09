@@ -7,4 +7,4 @@ name = "Elm"
 
 main : Html.Html a
 main =
-    text <| "Hello, I'm " ++ name
+    text <| "Hello, I'm " ++ name ++ "."
