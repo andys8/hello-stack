@@ -14,14 +14,7 @@ module.exports = {
       // It is guaranteed to exist because we tweak it in `env.js`
       process.env.NODE_PATH.split(path.delimiter).filter(Boolean)
     ),
-    extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx', '.elm', '.re', '.ml', '.purs'],
-    plugins: [
-      // Prevents users from importing files from outside of src/ (or node_modules/).
-      // This often causes confusion because we only process files within src/ with babel.
-      // To fix this, we prevent you from importing files out of src/ -- if you'd like to,
-      // please link the files into your node_modules/ and let module-resolution kick in.
-      // Make sure your source files are compiled, as they will not be processed in any way.
-    ],
+    extensions: ['.web.js', '.js', '.json', '.web.jsx', '.jsx', '.elm', '.re', '.ml', '.purs', '.ts'],
     alias: {
       'vue': 'vue/dist/vue.common.js'
     }
@@ -65,6 +58,10 @@ module.exports = {
             loader: 'bs-loader'
           }
         ]
+      },
+      {
+        test: /\.ts$/,
+        loader: ['awesome-typescript-loader']
       },
       {
         test: /\.purs$/,
@@ -141,7 +138,7 @@ module.exports = {
             // it's runtime that would otherwise processed through "file" loader.
             // Also exclude `html` and `json` extensions so they get processed
             // by webpacks internal loaders.
-            exclude: [/\.js$/, /\.html$/, /\.json$/, /\.elm$/, /\.re$/, /\.purs$/],
+            exclude: [/\.js$/, /\.html$/, /\.json$/, /\.elm$/, /\.re$/, /\.purs$/, /.ts$/],
             options: {
               name: 'static/media/[name].[hash:8].[ext]',
             },

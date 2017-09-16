@@ -26,7 +26,7 @@ header h1 {
 }
 
 #app__elm {
-  font-family: 'Berkshire Swash', Helvetica, sans-serif;
+  font-family: 'Lobster Two', Helvetica, sans-serif;
   background-color: #60b5cc;
   color: #34495E;
 } 
@@ -47,4 +47,10 @@ header h1 {
   font-family: 'Cookie', Helvetica, sans-serif;
   background-color: #41b883;
   color: #35495e;  
+}
+
+#app__angular {
+  font-family: 'Berkshire Swash', Helvetica, sans-serif;  
+  color: #ffffff;
+  background-color: #c3002f;  
 }
