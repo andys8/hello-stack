@@ -14,29 +14,37 @@ header h1 {
   border: 1px solid #DDD;
   padding: 16px;
   margin-top: 10px;
+  font-size: 40px;  
+  font-weight: 400;
   text-shadow: 4px 4px 0px rgba(0,0,0,0.1);  
 }
   
 #app__react {
-  font: 400 40px 'Oleo Script', Helvetica, sans-serif;
+  font-family: 'Oleo Script', Helvetica, sans-serif;
   background-color: #2d2d2d;
   color: #61dafb;
 }
 
 #app__elm {
-  font: 400 40px 'Berkshire Swash', Helvetica, sans-serif;
+  font-family: 'Berkshire Swash', Helvetica, sans-serif;
   background-color: #60b5cc;
   color: #34495E;
 } 
 
 #app__reasonml {
-  font: 400 40px 'Leckerli One', Helvetica, sans-serif;
+  font-family: 'Leckerli One', Helvetica, sans-serif;
   background-color: #db4d3f;
   color: #fff;
 }
 
 #app__purescript {
-  font: 400 40px 'Great Vibes', Helvetica, sans-serif;  
+  font-family: 'Great Vibes', Helvetica, sans-serif;  
   background-color: #1d222d;
   color: #fff;  
+}
+
+#app__vue {
+  font-family: 'Cookie', Helvetica, sans-serif;
+  background-color: #41b883;
+  color: #35495e;  
 }

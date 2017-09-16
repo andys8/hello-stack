@@ -12,6 +12,7 @@ Experimental project with multiple frontend frameworks or languages.
 - [Elm](http://elm-lang.org)
 - [ReasonML](https://reasonml.github.io)
 - [PureScript](http://www.purescript.org)
+- [Vue](https://vuejs.org)
 
 ## Instructions
 
